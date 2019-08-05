@@ -16,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import static javafx.stage.Modality.WINDOW_MODAL;
 
@@ -45,7 +46,7 @@ public class FormulaApp extends Application {
         screenHeight = screen.getHeight();
 
         // Create buttons
-        Button btnOne = new Button("Formula 1: Volume");
+        Button btnOne = new Button("Formula 1: Box Volume");
         Button btnTwo = new Button("Formula 2: Coulombs Law");
         Button btnClose = new Button("Exit");
 
@@ -83,16 +84,16 @@ public class FormulaApp extends Application {
 
         // Create buttons
         Button btnFirst = new Button("Compute " + buttonText[3]);
-        btnFirst.setOnAction(e -> handlePress(stage, 0));
+        btnFirst.setOnAction(e -> handleVariable(stage, 0));
 
         Button btnSecond = new Button("Compute " + buttonText[0]);
-        btnSecond.setOnAction(e -> handlePress(stage, 1));
+        btnSecond.setOnAction(e -> handleVariable(stage, 1));
 
         Button btnThird = new Button("Compute " + buttonText[1]);
-        btnThird.setOnAction(e -> handlePress(stage, 2));
+        btnThird.setOnAction(e -> handleVariable(stage, 2));
 
         Button btnFourth = new Button("Compute " + buttonText[2]);
-        btnFourth.setOnAction(e -> handlePress(stage, 3));
+        btnFourth.setOnAction(e -> handleVariable(stage, 3));
 
         Button btnClose = new Button("Go Back To Main");
         btnClose.setOnAction(e -> stage.close());
@@ -118,7 +119,7 @@ public class FormulaApp extends Application {
         stage.show();
     }
 
-    private void handlePress(Stage stage, int varIndex) {
+    private void handleVariable(Stage stage, int varIndex) {
         Stage lastStage = new Stage();
         lastStage.initOwner(stage);
         lastStage.initModality(WINDOW_MODAL);
@@ -171,7 +172,7 @@ public class FormulaApp extends Application {
 
         // Set the final stage
         lastStage.setScene(scene);
-        lastStage.setTitle("Formula1:Volume Computation");
+        lastStage.initStyle(StageStyle.UNDECORATED);
         lastStage.show();
     }
 

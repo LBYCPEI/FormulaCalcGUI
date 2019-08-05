@@ -38,19 +38,19 @@ public class Coulomb implements IFormula {
         this.distance = distance;
     }
 
-    private void computeForce() {
+    public void computeForce() {
         force = ((k * q1 * q2) / (distance * distance));
     }
 
-    private void computeQ1() {
+    public void computeQ1() {
         q1 = (force * (distance * distance) / (k * q2));
     }
 
-    private void computeQ2() {
+    public void computeQ2() {
         q2 = (force * (distance * distance) / (k * q1));
     }
 
-    private void computeDistance() {
+    public void computeDistance() {
         distance = (Math.sqrt(k * q1 * q2 / force));
     }
 
