@@ -2,6 +2,7 @@
 
 JavaFX Starter Formula Calc GUI
 
+![](https://github.com/melvincabatuan/FormulaCalcGUI/blob/master/FormulaAppUML.png)
 
 ## Logic Only
 ```
