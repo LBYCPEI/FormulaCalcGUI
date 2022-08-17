@@ -1,6 +1,7 @@
-/*
+package ph.edu.dlsu.javafxhellodemo;/*
 @author cobalt-mkc
-date modified: 8/5/2019
+date created: 8/5/2019
+last modified: 8/17/2022
  */
 
 import javafx.application.Application;
@@ -38,6 +39,8 @@ public class FormulaApp extends Application {
         launch(args);
     }
 
+    private static Scene scene;
+
     @Override
     public void start(Stage primaryStage) {
         // Get Screen size
@@ -63,9 +66,10 @@ public class FormulaApp extends Application {
         root.setAlignment(Pos.CENTER);
         root.setSpacing(20);
         root.getChildren().addAll(menu, btnOne, btnTwo, btnClose);
-        Scene scene = new Scene(root, screenWidth, screenHeight);
+        scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
-            scene.getStylesheets().add(getClass().getResource("mystyle.css").toExternalForm());
+            scene.getStylesheets().add("mystyle.css");
+//            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
         }
 
         // Create the stage
@@ -108,7 +112,8 @@ public class FormulaApp extends Application {
 
         Scene scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
-            scene.getStylesheets().add(getClass().getResource("mystyle.css").toExternalForm());
+            scene.getStylesheets().add("mystyle.css");
+//            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
         }
 
         stage.initOwner(primaryStage);
@@ -167,7 +172,8 @@ public class FormulaApp extends Application {
 
         Scene scene = new Scene(root, screenWidth / 2, screenHeight);
         if (!isLogicOnly) {
-            scene.getStylesheets().add(getClass().getResource("mystyle.css").toExternalForm());
+            scene.getStylesheets().add("mystyle.css");
+//            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
         }
 
         // Set the final stage
